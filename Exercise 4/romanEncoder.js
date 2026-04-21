@@ -1,27 +1,25 @@
 function solution(number){
-    const lib={
-        "1000" : "M",
-        "500" : "D",
-        "100" : "C",
-        "50" : "L",
-        "10" : "X",
-        "5" : "V",
-        "4" : "IV",
-        "3" : "III",
-        "2" : "II",
-        "1" : "I"
+    const lib = {
+            M : 1000,
+            CM : 900,
+            D : 500,
+            CD : 400,
+            C : 100,
+            XC : 90,
+            L : 50,
+            XL : 40,
+            X : 10,
+            IX : 9,
+            V : 5,
+            IV : 4,
+            I : 1
         }
-    
-    const str = number.toString()
-    const result = []
-    for(let i = str.length -1; i>=0; i--){
-        const temp = Math.floor(Number(str[i]) / 5)
-        const remainder = Number(str[i]) % 5
-        
-        const romanFormat = ()
-        
-        if(remainder !==0){
-        
+    let result = ""
+    for(let key in lib){
+        while(number >= lib[key]){
+        result+= key
+        number -= lib[key]
         }
     }
+    return result
 }
