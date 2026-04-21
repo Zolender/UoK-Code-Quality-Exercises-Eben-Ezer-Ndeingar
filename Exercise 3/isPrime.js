@@ -1,5 +1,6 @@
 const isPrime = (n)=>{
     if(n<=0)return false
+    if(!Number.isInteger(n))return false
     if(n<=3)return true
     if(n%2===0)return false
 
