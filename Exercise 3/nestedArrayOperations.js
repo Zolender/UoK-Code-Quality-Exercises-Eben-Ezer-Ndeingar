@@ -1,4 +1,5 @@
 function depthChecker(arr, depth = 1){
+    if(!Array.isArray(arr))return
     let maxDepth = depth
     for(let item of arr){
         if(Array.isArray(item)){
